@@ -1,7 +1,22 @@
 /**
  * How to print beautifully array of objects OR array with JSON objects 
- * inside using a library called Gson
+ * inside using a library called Gson.
+ * It will print with brackets and curly braces including indent
  */
+
+// pom.xml
+<dependencies>
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20231013</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.10.1</version>
+    </dependency>
+</dependencies>
 
 // Main.java
 import com.google.gson.GsonBuilder;
