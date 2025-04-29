@@ -1,6 +1,6 @@
 /**
  * How to print beautifully array of objects OR array with JSON objects 
- * inside using a library called Gson.
+ * using a library called Gson.
  * It will print with brackets and curly braces including indent
  */
 
@@ -48,3 +48,30 @@ public class Main {
   }
 ]
 // ====================================================================================================
+
+/**
+ * How to print beautifully array of objects OR array with JSON objects normally
+ * using java.util.Arrays.toString()
+ */
+public class Main {
+    record Person(String firstName, String lastName) {}
+
+    public static void main(String[] args) {
+        // Create an array of objects containing first and last names
+        Person[] people = {
+            new Person("John", "Smith"),
+            new Person("Mary", "Johnson"),
+        };
+        System.out.println(java.util.Arrays.toString(people));
+  }
+}
+
+
+
+
+
+
+
+
+
+
