@@ -134,6 +134,13 @@ public class Main {
             new Person("John", "Doe"),
             new Person("Jane", "Smith")
         ).toArray(Person[]::new);
+
+
+        // Using Arrays.copyOf (When Copying/Expanding Existing Array):
+        Person[] initial = { new Person("John", "Doe") };
+        Person[] people = Arrays.copyOf(initial, 3);
+        people[1] = new Person("Jane", "Smith");
+        people[2] = new Person("Bob", "Johnson");
         
         
         System.out.println(java.util.Arrays.toString(people));
