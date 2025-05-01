@@ -21,6 +21,8 @@ for (Object item : mixedArray) {
     System.out.println(item);
 }
 
+To mix data types, you can use Object[] or collections like ArrayList<Object>
+
 // --------------------------------------------------------------------------------
 /**
  * How to initialize or declare Arrays using ArrayList
