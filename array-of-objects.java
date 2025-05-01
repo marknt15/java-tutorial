@@ -152,6 +152,7 @@ public class Main {
 
 /**
  * How to declare or initialize array of objects - second way as JSON with no structure type
+ * This is using JSONArray and JSONObject but not modern
  */
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -199,5 +200,54 @@ JSON Structure:
 }
 // ====================================================================================================
 
+/**
+ * How to declare or initialize array of objects - using the modern way Jackson
+ */
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
+import java.util.*;
 
+public class Main {
+    public static void main(String[] args) throws Exception {
+        // Create ObjectMapper with pretty print
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+        // Create a Map to represent the person object
+        Map<String, Object> person = new LinkedHashMap<>();
+        person.put("firstName", "Bob");
+        person.put("lastName", "Johnson");
+        person.put("age", 25);
+
+        // Create a list of hobbies
+        List<String> hobbies = Arrays.asList("painting", "swimming");
+        person.put("hobbies", hobbies);
+
+        // Create a nested map for address
+        Map<String, String> address = new LinkedHashMap<>();
+        address.put("street", "456 Oak Ave");
+        address.put("city", "Someville");
+        person.put("address", address);
+
+        // Convert the map to a JSON string
+        String jsonString = mapper.writeValueAsString(person);
+
+        System.out.println("JSON Structure:");
+        System.out.println(jsonString);
+    }
+}
+
+OUTPUT:
+{
+  "firstName" : "Bob",
+  "lastName" : "Johnson",
+  "age" : 25,
+  "hobbies" : [ "painting", "swimming" ],
+  "address" : {
+    "street" : "456 Oak Ave",
+    "city" : "Someville"
+  }
+}
+
+// ====================================================================================================
