@@ -1,3 +1,13 @@
+/*
+In Java, these are the types of Arrays:
+
+Array - fixed size and you need to initialize the size.
+List -  Interface representing an ordered collection (like an array, but resizable).
+ArrayList - A resizable array implementation of List.
+HashMap - A key-value map with no guaranteed order. Very fast for lookup.
+LinkedHashMap - A HashMap that remembers insertion order (or access order if configured).
+*/
+
 /**
  * How to initialize or declare Arrays using ArrayList
  * Dynamic Array Size
@@ -17,13 +27,6 @@ public class Demo {
 }
 
 // --------------------------------------------------------------------------------
-
-/*
-List -  Interface representing an ordered collection (like an array, but resizable).
-ArrayList - A resizable array implementation of List.
-HashMap - A key-value map with no guaranteed order. Very fast for lookup.
-LinkedHashMap - A HashMap that remembers insertion order (or access order if configured).
-*/
 
 /**
  * How to initialize or declare HashMap Array
