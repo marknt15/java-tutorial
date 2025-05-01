@@ -15,6 +15,12 @@ LinkedHashMap - A HashMap that remembers insertion order (or access order if con
 int[] numbers = { 1, 2, 3, 4, 5 };
 System.out.println(Arrays.toString(numbers));
 
+// Creating an array that can hold mixed types using Object[]
+Object[] mixedArray = { "apple", 42, "banana", 100, "cherry" };
+for (Object item : mixedArray) {
+    System.out.println(item);
+}
+
 // --------------------------------------------------------------------------------
 /**
  * How to initialize or declare Arrays using ArrayList
