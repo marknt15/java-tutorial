@@ -150,8 +150,54 @@ public class Main {
 
 // ====================================================================================================
 
+/**
+ * How to declare or initialize array of objects - second way as JSON with no structure type
+ */
+import org.json.JSONArray;
+import org.json.JSONObject;
+public class Main {
+    public static void main(String[] args) {
+        // Second way to create array of objects
+        // Create a JSONObject
+        JSONObject person = new JSONObject();
+        person.put("firstName", "Bob");
+        person.put("lastName", "Johnson");
+        person.put("age", 25);
 
+        // Create a JSONArray
+        JSONArray hobbies = new JSONArray();
+        hobbies.put("painting");
+        hobbies.put("swimming");
+        person.put("hobbies", hobbies);
 
+        // Create a nested JSONObject
+        JSONObject address = new JSONObject();
+        address.put("street", "456 Oak Ave");
+        address.put("city", "Someville");
+        person.put("address", address);
+
+        // Print the structure (using toString(int indentFactor) for pretty printing)
+        System.out.println("JSON Structure:");
+        System.out.println(person.toString(2)); // The '2' argument indents the output
+    }
+}
+
+OUTPUT:
+JSON Structure:
+{
+  "firstName": "Bob",
+  "lastName": "Johnson",
+  "address": {
+    "city": "Someville",
+    "street": "456 Oak Ave"
+  },
+  "hobbies": [
+    "painting",
+    "swimming"
+  ],
+  "age": 25
+}
+// ====================================================================================================
 
 
 
