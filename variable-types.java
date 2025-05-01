@@ -1,5 +1,17 @@
 public class JavaVariableTypes {
     public static void main(String[] args) {
+
+        var message = "Hello"; // Clearly a String
+        var count = 0;         // Clearly an int
+
+        // Instead of this:
+        HashMap<String, List<Customer>> customersByRegion = new HashMap<String, List<Customer>>();
+        
+        // You can write:
+        var customersByRegion = new HashMap<String, List<Customer>>();
+
+
+        
         // PRIMITIVE DATA TYPES
         System.out.println("--- PRIMITIVE DATA TYPES ---");
         
