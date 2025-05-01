@@ -8,6 +8,14 @@ HashMap - A key-value map with no guaranteed order. Very fast for lookup.
 LinkedHashMap - A HashMap that remembers insertion order (or access order if configured).
 */
 
+// --------------------------------------------------------------------------------
+/**
+ * Basic Array with type initialization = fixed size
+ */
+int[] numbers = { 1, 2, 3, 4, 5 };
+System.out.println(Arrays.toString(numbers));
+
+// --------------------------------------------------------------------------------
 /**
  * How to initialize or declare Arrays using ArrayList
  * Dynamic Array Size
