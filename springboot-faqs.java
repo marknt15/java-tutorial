@@ -1,6 +1,10 @@
 // How to add a Bean using Annotations
 // Other Annotations: @Component @Service @Repository @Controller
 
+// @Autowired is used on the top of a constructor. To tell this pring to autowire this with dependency.
+// only used for multiple constructors.
+// Also, @Autowired should be added to the second constructor
+
 @SpringbootApplication
 public class StoreApplication {
   public static void main(String[] args) {
