@@ -119,3 +119,26 @@ public class StoreApplication {
 
 // There is also a lifecyle of Bean
 
+// There is also a lifecyle of Bean using hooks annotation. Example:
+// PostConstruct tells spring that we have some initialization to do. This method will be called after a Bean of type OrderService is created and initialized. Meaning after a call to the constructor
+@PostConstruct
+public void init() {
+	System.out.println("OrderService PostConstruct");
+}
+
+// before destroying the Bean instance object is destroyed. It is a Bean Lifecycle hook.
+// This must use the ConfigurableApplicationContext interface to work THEN context.close()
+@PreDestroy
+public void cleanup() {
+	
+}
+
+Configuring Beans in Spring
+There are two ways to configure beans in Spring:
+• Using Annotations: We can define beans using @Component, @Service,
+@Repository, and @Controller.
+• Programmatically: We can manually configure beans using Java-based
+configuration with @Bean inside a @Configuration class. This provides more
+fine-grained control over bean creation.
+• When multiple beans of the same type exist, we can specify which one to use with
+@Primary or @Qualifier.
