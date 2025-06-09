@@ -92,4 +92,30 @@ public class AppConfig {
 
 // @Service annotation can accept a parameter which is the bean name
 // @Service("email")
-  
+
+
+// Bean Scopes (singleton, prototype, application, request, session)
+- Singleton (default) - 1 instance of bean is created per container 
+- Prototype - a new instance is created everytime it is requested in the IOC container
+- Request - a new bean instance is created for each HTTP request. The bean exists only for the duration of the HTTP request. Destroyed once the request is completed.
+- Session - a new bean instance is created for each HTTP Session request. The bean exists only for the duration of the HTTP Session request. Destroyed once the request is completed.
+
+public class StoreApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext  context = SpringApplication.run();
+		var orderService = context.getBean(OrderService.class);
+
+		var orderService2 = context.getBean(OrderService.class);
+	
+	}
+}
+
+// Spring IOC container - lalagyan ng beans ng springboot
+
+// Prototype Bean Scope example
+@Bean
+@Scope("prototype")
+
+// There is also a lifecyle of Bean
+
