@@ -29,3 +29,21 @@ public class OrderService {
     paymentService.processPayment(10);
   }
 }
+
+
+// Controlling Bean Selections using @Primary and @Qualifier
+// @Primary annotation just before the class initialization
+// this is to tell spring that this is the 
+import org.springframework.beans.factory.annotation.Qualifier;
+
+@Service
+public class OrderService {
+	private PaymentService paymentService;
+	public OrderService(@Qualifier("paypal") PaymentService paymentService) {
+		this.paymentService = paymentService;
+	}
+}
+
+// @Service annotation can accept a parameter
+// @Service("email")
+  
