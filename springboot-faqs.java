@@ -32,8 +32,10 @@ public class OrderService {
 
 
 // Controlling Bean Selections using @Primary and @Qualifier
-// @Primary annotation just before the class initialization
-// this is to tell spring that this is the 
+@Primary annotation just before the class initialization
+this is to tell spring that this is the 
+
+
 import org.springframework.beans.factory.annotation.Qualifier;
 
 @Service
@@ -44,6 +46,50 @@ public class OrderService {
 	}
 }
 
-// @Service annotation can accept a parameter
+
+to get values in config files
+you can use @Value annotation to get the values.
+Example:
+@Value("${stripe.apiUrl}")
+private String apiUrl;	
+
+// to add a default value do this:
+@Value("${stripe.apiUrl:3000}")
+
+@Value("${stripe.supported-currencies}")
+private List<String> supportedCurrencies;
+
+// application.properties file
+stripe.apiUrl= https://api.stripe.com
+stripe.supported-currencies=USD,PHP,EUR,GDP
+
+
+// Configuring Beans using Java code
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+	@Bean
+	public PaymentService stripe() {
+		return new StripePaymentService();
+	}
+
+	@Bean
+	public OrderService orderService() {
+		return new OrderService(stripe());
+	}
+}
+
+// Lazy Initialization
+
+// Bean Initialization
+- Early / Eager
+- Lazy
+	- optimization technique
+	- create objects when needed
+- just add @Lazy annotation above the class name
+
+// @Service annotation can accept a parameter which is the bean name
 // @Service("email")
   
